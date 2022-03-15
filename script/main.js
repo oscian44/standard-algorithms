@@ -1,5 +1,5 @@
 //Text Area
-var output = document.getElementById("output").value
+var output = document.getElementById("output")
 
 //Divs
 var menuDiv = document.getElementById("mainMenu");
@@ -39,9 +39,12 @@ window.onload = startDiv()
 
 
 //Linear Search
+
 function linearSearch() {
     hideDivs()
-    linearDiv.style.display = "block"
+    outputDiv.style.display = "Block"
+    linearDiv.style.display = "Block"
+    output.value = ""
     let myArray = [
         "alpha",
         "beta",
@@ -59,7 +62,9 @@ function linearSearch() {
 
 function findMaxandMin() {
     hideDivs()
-    minmaxDiv.style.display = "block"
+    outputDiv.style.display = "Block"
+    minmaxDiv.style.display = "Block"
+    output.value = ""
     let myArray = [
         123,
         2523,
@@ -75,24 +80,39 @@ function findMaxandMin() {
         43,
         11
     ]
+    
+    output.value = "Input Array: [" + myArray + "]" + "\n"
+
     let theMin
     let theMax
+
+    output.value = output.value + "Finding Minimum Value" + "\n"
 
     for (i = 1; i < myArray.length; i++) {
         if (myArray[i] < myArray[i - 1]) {
             theMin = myArray[i]
+            output.value = output.value + "Position in array: " + i + " Minimum value as of now: " + theMin + "\n"
         }
-
-
     }
+
+    output.value = output.value + "Final Minimum Value: " + theMin
+    
+
 }
 
 function binarySearch(){
-
+    hideDivs()
+    outputDiv.style.display = "Block"
+    binaryDiv.style.display = "Block"
+    output.value = ""
 }
 
 function insertionSort() {
     hideDivs()
+    outputDiv.style.display = "Block"
+    insertionDiv.style.display = "Block"
+    output.value = ""
+    
     let myArray = [
         123,
         2523,
@@ -115,7 +135,7 @@ function insertionSort() {
         83
     ]
 
-    output = "Starting array: " + "[" + myArray + "]"
+    output.value = "Starting array: " + "[" + myArray + "]" + "\n"
 
     let n = myArray.length;
     for (let i = 1; i < n; i++) {
@@ -132,26 +152,38 @@ function insertionSort() {
         }
         myArray[l + 1] = current;
 
-        output = "Sorting array: " + "[" + myArray + "]"
+        output.value = output.value + "Sorting array: " + "[" + myArray + "]" + "\n"
     }
 
-    output = "Sorted array: " + "[" + myArray + "]"
+    output.value = output.value + "Sorted array: " + "[" + myArray + "]" + "\n"
 
 
 }
 
 function selectionSort(){
-    
+    hideDivs()
+    outputDiv.style.display = "Block"
+    selectionDiv.style.display = "Block"
+    output.value = ""
 }
 
 function bubbleSort(){
-
+    hideDivs()
+    outputDiv.style.display = "Block"
+    bubbleDiv.style.display = "Block"
+    output.value = ""
 }
 
 function processStrings(){
-
+    hideDivs()
+    outputDiv.style.display = "Block"
+    processDiv.style.display = "Block"
+    output.value = ""
 }
 
 function uniqueRandoms(){
-    
+    hideDivs()
+    outputDiv.style.display = "Block"
+    uniqueDiv.style.display = "Block"
+    output.value = ""
 }
