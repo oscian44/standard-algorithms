@@ -53,17 +53,86 @@ function linearSearch() {
         "epsilon",
         "zeta",
         "eta",
-        "theta"
+        "theta",
+        "iota",
+        "kappa",
+        "lambda",
+        "mu",
+        "nu",
+        "xi",
+        "omicron",
+        "pi",
+        "rho",
+        "sigma",
+        "tau",
+        "upsilon",
+        "phi",
+        "chi",
+        "psi",
+        "omega"
     ]
 
-
+    output.value = "Search terms: " + myArray + "\n" + "\n"
 
 }
+
+function linearProcess() {
+    linearSearch()
+    let inputArray = [
+        "alpha",
+        "beta",
+        "gamma",
+        "delta",
+        "epsilon",
+        "zeta",
+        "eta",
+        "theta",
+        "iota",
+        "kappa",
+        "lambda",
+        "mu",
+        "nu",
+        "xi",
+        "omicron",
+        "pi",
+        "rho",
+        "sigma",
+        "tau",
+        "upsilon",
+        "phi",
+        "chi",
+        "psi",
+        "omega"
+    ]
+    let term = document.getElementById("linearInput")
+    let found = 0
+
+
+
+    for (i = 0; i < inputArray.length; i++) {
+        output.value = output.value + "Current array position: " + i + "\n"
+        if (inputArray[i] == term) {
+            output.value = output.value + "Item " + inputArray[i] + " found at array location: " + i
+            found = 1
+        }
+    }
+
+    if (found != 1) {
+        output.value = output.value + "Item not found"
+    }
+}
+
+
 
 function findMaxandMin() {
     hideDivs()
     outputDiv.style.display = "Block"
     minmaxDiv.style.display = "Block"
+    output.value = ""
+}
+
+
+function findMin() {
     output.value = ""
     let myArray = [
         123,
@@ -72,35 +141,76 @@ function findMaxandMin() {
         27,
         394,
         56,
+        11,
         98,
         12455,
         1111,
         239,
         100,
-        43,
-        11
+        43
+
     ]
-    
+
     output.value = "Input Array: [" + myArray + "]" + "\n"
 
-    let theMin
-    let theMax
+    let theMin = myArray[0]
+
 
     output.value = output.value + "Finding Minimum Value" + "\n"
 
     for (i = 1; i < myArray.length; i++) {
-        if (myArray[i] < myArray[i - 1]) {
+        if (myArray[i] < theMin) {
             theMin = myArray[i]
-            output.value = output.value + "Position in array: " + i + " Minimum value as of now: " + theMin + "\n"
         }
+
+        output.value = output.value + "Position in array: " + i + "\n" + "Minimum value as of now: " + theMin + "\n" + "\n"
     }
 
     output.value = output.value + "Final Minimum Value: " + theMin
-    
+
 
 }
 
-function binarySearch(){
+function findMax() {
+    output.value = ""
+    let myArray = [
+        123,
+        2523,
+        39034,
+        27,
+        394,
+        56,
+        11,
+        98,
+        12455,
+        1111,
+        239,
+        100,
+        43
+
+    ]
+
+    let theMax = myArray[0]
+
+    output.value = "Input Array: [" + myArray + "]" + "\n"
+
+    output.value = output.value + "Finding Maximum Value" + "\n"
+
+    for (i = 1; i < myArray.length; i++) {
+        if (myArray[i] > theMax) {
+            theMax = myArray[i]
+        }
+
+        output.value = output.value + "Position in array: " + i + "\n" + "Maximum value as of now: " + theMax + "\n" + "\n"
+    }
+
+    output.value = output.value + "Final Maximum Value: " + theMax
+
+
+
+}
+
+function binarySearch() {
     hideDivs()
     outputDiv.style.display = "Block"
     binaryDiv.style.display = "Block"
@@ -112,7 +222,7 @@ function insertionSort() {
     outputDiv.style.display = "Block"
     insertionDiv.style.display = "Block"
     output.value = ""
-    
+
     let myArray = [
         123,
         2523,
@@ -160,28 +270,28 @@ function insertionSort() {
 
 }
 
-function selectionSort(){
+function selectionSort() {
     hideDivs()
     outputDiv.style.display = "Block"
     selectionDiv.style.display = "Block"
     output.value = ""
 }
 
-function bubbleSort(){
+function bubbleSort() {
     hideDivs()
     outputDiv.style.display = "Block"
     bubbleDiv.style.display = "Block"
     output.value = ""
 }
 
-function processStrings(){
+function processStrings() {
     hideDivs()
     outputDiv.style.display = "Block"
     processDiv.style.display = "Block"
     output.value = ""
 }
 
-function uniqueRandoms(){
+function uniqueRandoms() {
     hideDivs()
     outputDiv.style.display = "Block"
     uniqueDiv.style.display = "Block"
