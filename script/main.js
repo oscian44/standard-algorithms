@@ -7,11 +7,14 @@ var outputDiv = document.getElementById("outputDiv")
 var linearDiv = document.getElementById("linearDiv")
 var minmaxDiv = document.getElementById("minmaxDiv")
 var binaryDiv = document.getElementById("binaryDiv")
+var binTextdiv = document.getElementById("binText")
+var binNumdiv = document.getElementById("binNum")
 var insertionDiv = document.getElementById("insertionDiv")
 var selectionDiv = document.getElementById("selectionDiv")
 var bubbleDiv = document.getElementById("bubbleDiv")
 var processDiv = document.getElementById("processDiv")
 var uniqueDiv = document.getElementById("uniqueDiv")
+
 
 //Hides All Divs
 function hideDivs() {
@@ -19,12 +22,15 @@ function hideDivs() {
     linearDiv.style.display = "none"
     minmaxDiv.style.display = "none"
     binaryDiv.style.display = "none"
+    binTextdiv.style.display = "none"
+    binNumdiv.style.display = "none"
     insertionDiv.style.display = "none"
     selectionDiv.style.display = "none"
     bubbleDiv.style.display = "none"
     processDiv.style.display = "none"
     uniqueDiv.style.display = "none"
     outputDiv.style.display = "none"
+    
 }
 
 //Displays Start Page Divs
@@ -104,7 +110,7 @@ function linearProcess() {
         "psi",
         "omega"
     ]
-    let term = document.getElementById("linearInput")
+    let term = document.getElementById("linearInput").value
     let found = 0
 
 
@@ -114,6 +120,7 @@ function linearProcess() {
         if (inputArray[i] == term) {
             output.value = output.value + "Item " + inputArray[i] + " found at array location: " + i
             found = 1
+            return
         }
     }
 
@@ -122,7 +129,85 @@ function linearProcess() {
     }
 }
 
+function binarySearch() {
+    hideDivs()
+    outputDiv.style.display = "Block"
+    binaryDiv.style.display = "Block"
+    output.value = ""
+}
 
+function binText() {
+    binTextdiv.style.display = "Block"
+    binNumdiv.style.display = "none"
+    output.value = ""
+    let inputArray = [
+        "alpha",
+        "beta",
+        "gamma",
+        "delta",
+        "epsilon",
+        "zeta",
+        "eta",
+        "theta",
+        "iota",
+        "kappa",
+        "lambda",
+        "mu",
+        "nu",
+        "xi",
+        "omicron",
+        "pi",
+        "rho",
+        "sigma",
+        "tau",
+        "upsilon",
+        "phi",
+        "chi",
+        "psi",
+        "omega"
+    ]
+
+    output.value = "Search terms: " + myArray + "\n" + "\n"
+
+
+}
+
+function binTProcess(){
+    output.value = ""
+}
+
+function binNum() {
+    binNumdiv.style.display = "Block"
+    binTextdiv.style.display = "none"
+    output.value = ""
+    let myArray = [
+        123,
+        2523,
+        39034,
+        27,
+        394,
+        56,
+        98,
+        12455,
+        1111,
+        239,
+        100,
+        43,
+        11,
+        1,
+        9,
+        3,
+        77,
+        27,
+        83
+    ]
+
+    output.value = "Starting array: " + "[" + myArray + "]" + "\n"
+}
+
+function binNProcess() {
+    output.value = ""
+}
 
 function findMaxandMin() {
     hideDivs()
@@ -210,12 +295,6 @@ function findMax() {
 
 }
 
-function binarySearch() {
-    hideDivs()
-    outputDiv.style.display = "Block"
-    binaryDiv.style.display = "Block"
-    output.value = ""
-}
 
 function insertionSort() {
     hideDivs()
